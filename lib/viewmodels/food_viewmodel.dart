@@ -16,7 +16,7 @@ class FoodViewModel with ChangeNotifier {
       imagePath: 'assets/images/Image 3.png',
     ),
     FoodModel(
-      title: 'Omlette', 
+      title: 'Omlette',
       calories: '450 kcal',
       time: '35 min',
       imagePath: 'assets/images/Image 4.png',
@@ -30,9 +30,4 @@ class FoodViewModel with ChangeNotifier {
   ];
 
   List<FoodModel> get foods => _foods;
-  
-  // İleride eklenebilecek metodlar:
-  // void addFood(FoodModel food) { ... }
-  // void removeFood(int index) { ... }
-  // void updateFood(int index, FoodModel food) { ... }
 }
