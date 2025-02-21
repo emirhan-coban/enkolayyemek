@@ -16,10 +16,26 @@ class FavoriteModel extends HiveObject {
   @HiveField(3)
   final String imagePath;
 
+  @HiveField(4)
+  final String category;
+
+  @HiveField(5)
+  final String description;
+
+  @HiveField(6)
+  final List<String> steps;
+
+  @HiveField(7)
+  final List<String> ingredients;
+
   FavoriteModel({
     required this.title,
     required this.calories,
     required this.time,
     required this.imagePath,
+    this.category = 'Genel',
+    this.description = 'Tarif açıklaması bulunmamaktadır.',
+    this.steps = const ['Adım bilgisi bulunmamaktadır.'],
+    this.ingredients = const ['Malzeme bilgisi bulunmamaktadır.'],
   });
 }

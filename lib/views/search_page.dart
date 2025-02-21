@@ -3,6 +3,8 @@ import 'package:enkolayyemek/widgets/category_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../viewmodels/food_viewmodel.dart';
+import '../models/food_model.dart';
+import 'recipe_detail_page.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -13,7 +15,7 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   final TextEditingController _searchController = TextEditingController();
-  String _searchQuery = ''; // Remove 'final' to allow changes
+  String _searchQuery = '';
 
   @override
   void dispose() {
@@ -27,6 +29,7 @@ class _SearchPageState extends State<SearchPage> {
       body: SafeArea(
         child: Column(
           children: [
+            // Search TextField
             Padding(
               padding: const EdgeInsets.all(16),
               child: TextField(
@@ -37,7 +40,7 @@ class _SearchPageState extends State<SearchPage> {
                     borderSide: BorderSide(
                       color: Theme.of(context).colorScheme.secondary,
                       width: 2.5,
-                    )
+                    ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
@@ -56,9 +59,6 @@ class _SearchPageState extends State<SearchPage> {
                           },
                         )
                       : null,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
                   filled: true,
                   fillColor: Colors.grey[200],
                 ),
@@ -69,12 +69,10 @@ class _SearchPageState extends State<SearchPage> {
                 },
               ),
             ),
-            
-            // Category Buttons
+            // Category Title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Kategoriler',
@@ -88,8 +86,7 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
             const SizedBox(height: 16),
-            
-            // Category Filter Buttons
+            // Category Filter Buttons Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -117,25 +114,22 @@ class _SearchPageState extends State<SearchPage> {
               ],
             ),
             const SizedBox(height: 16),
-
             // Filtered Recipe List
             Expanded(
               child: Consumer2<FoodViewModel, CategoryProvider>(
                 builder: (context, foodViewModel, categoryProvider, child) {
+                  // Start with all foods
                   var foods = foodViewModel.foods;
                   
-                  // Apply category filter
+                  // Apply category filter if any
                   if (categoryProvider.selectedCategory.isNotEmpty) {
-                    foods = foods.where((food) => 
-                      food.category == categoryProvider.selectedCategory).toList();
+                    foods = foods.where((food) => food.category == categoryProvider.selectedCategory).toList();
+                  }
+                  // Apply search filter if any
+                  if (_searchQuery.isNotEmpty) {
+                    foods = foods.where((food) => food.title.toLowerCase().contains(_searchQuery.toLowerCase())).toList();
                   }
                   
-                  // Apply search filter
-                  if (_searchQuery.isNotEmpty) {
-                    foods = foods.where((food) => 
-                      food.title.toLowerCase().contains(_searchQuery.toLowerCase())).toList();
-                  }
-
                   if (foods.isEmpty) {
                     return const Center(
                       child: Text('Aradığınız tarif bulunamadı.'),
@@ -162,9 +156,7 @@ class _SearchPageState extends State<SearchPage> {
                           ),
                           title: Text(
                             food.title,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           subtitle: Row(
                             children: [
@@ -184,7 +176,23 @@ class _SearchPageState extends State<SearchPage> {
                             ],
                           ),
                           onTap: () {
-                            // TODO: Navigate to recipe detail
+                            // Create FoodModel instance and navigate to RecipeDetailPage
+                            final foodModel = FoodModel(
+                              title: food.title,
+                              calories: food.calories,
+                              time: food.time,
+                              imagePath: food.imagePath,
+                              category: food.category,
+                              description: food.description,
+                              steps: food.steps,
+                              ingredients: food.ingredients,
+                            );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => RecipeDetailPage(recipe: foodModel),
+                              ),
+                            );
                           },
                         ),
                       );

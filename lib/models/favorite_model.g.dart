@@ -21,13 +21,17 @@ class FavoriteModelAdapter extends TypeAdapter<FavoriteModel> {
       calories: fields[1] as String,
       time: fields[2] as String,
       imagePath: fields[3] as String,
+      category: fields[4] as String,
+      description: fields[5] as String,
+      steps: (fields[6] as List).cast<String>(),
+      ingredients: (fields[7] as List).cast<String>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, FavoriteModel obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
@@ -35,7 +39,15 @@ class FavoriteModelAdapter extends TypeAdapter<FavoriteModel> {
       ..writeByte(2)
       ..write(obj.time)
       ..writeByte(3)
-      ..write(obj.imagePath);
+      ..write(obj.imagePath)
+      ..writeByte(4)
+      ..write(obj.category)
+      ..writeByte(5)
+      ..write(obj.description)
+      ..writeByte(6)
+      ..write(obj.steps)
+      ..writeByte(7)
+      ..write(obj.ingredients);
   }
 
   @override
