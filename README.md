@@ -1,6 +1,6 @@
-# 🍽️ Recipe App
+# 🍽️ enKolayYemek
 
-Recipe App, kullanıcıların farklı kategorilerde yemek tariflerini keşfedebileceği, favorilerine ekleyebileceği ve arayabileceği bir mobil uygulamadır. 
+enKolayYemek, kullanıcıların farklı kategorilerde yemek tariflerini keşfedebileceği, favorilerine ekleyebileceği ve arayabileceği bir mobil uygulamadır. 
 
 ## 📸 Ekran Görüntüleri
 <div style="display: flex; justify-content: space-around;">
@@ -49,5 +49,5 @@ Eğer projeye katkıda bulunmak istiyorsan, şu adımları takip edebilirsin:
 ## 📬 İletişim
 Projeyle ilgili herhangi bir sorunun varsa benimle iletişime geçebilirsin:
 
-📧 [emirhan@example.com](mailto:emirhan@example.com)  
+📧 [emirhancob4n@gmail.com](mailto:emirhancob4n@gmail.com)
 🐦 [GitHub Profilim](https://github.com/emirhan-coban)
