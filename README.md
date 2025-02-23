@@ -3,18 +3,10 @@
 Recipe App, kullanıcıların farklı kategorilerde yemek tariflerini keşfedebileceği, favorilerine ekleyebileceği ve arayabileceği bir mobil uygulamadır. 
 
 ## 📸 Ekran Görüntüleri
-
-### Ana Sayfa
-<img src="screenshots/Screenshot_1.png" width="300" />
-
-### Tarif Detayı
-<img src="screenshots/Screenshot_4.png" width="300" />
-
-### Favorilerim
-<img src="screenshots/Screenshot_2.png" width="300" />
-
-### Arama Sayfası
-<img src="screenshots/Screenshot_3.png" width="300" />
+<img src="screenshots/Screenshot_1.png" width="200" />
+<img src="screenshots/Screenshot_4.png" width="200" />
+<img src="screenshots/Screenshot_2.png" width="200" />
+<img src="screenshots/Screenshot_3.png" width="200" />
 
 ## 🚀 Özellikler
 - 📌 Yemek tariflerini listeleme
