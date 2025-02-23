@@ -5,13 +5,16 @@ Recipe App, kullanıcıların farklı kategorilerde yemek tariflerini keşfedebi
 ## 📸 Ekran Görüntüleri
 
 ### Ana Sayfa
-![Ana Sayfa](screenshots/Screenshot_1.png)
+<img src="screenshots/Screenshot_1.png" width="300" />
+
+### Tarif Detayı
+<img src="screenshots/Screenshot_4.png" width="300" />
 
 ### Favorilerim
-![Tarif Detay](screenshots/Screenshot_2.png)
+<img src="screenshots/Screenshot_2.png" width="300" />
 
 ### Arama Sayfası
-![Tarif Detay](screenshots/Screenshot_3.png)
+<img src="screenshots/Screenshot_3.png" width="300" />
 
 ## 🚀 Özellikler
 - 📌 Yemek tariflerini listeleme
