@@ -1,7 +1,6 @@
-```markdown
-# 🍽️ enKolayYemek
+# 🍽️ Recipe App
 
-enKolayYemek, kullanıcıların farklı kategorilerde yemek tariflerini keşfedebileceği, favorilerine ekleyebileceği ve arayabileceği bir mobil uygulamadır. 
+Recipe App, kullanıcıların farklı kategorilerde yemek tariflerini keşfedebileceği, favorilerine ekleyebileceği ve arayabileceği bir mobil uygulamadır. 
 
 ## 📸 Ekran Görüntüleri
 
@@ -35,28 +34,4 @@ git clone https://github.com/emirhan-coban/recipe_app.git
 cd recipe_app
 flutter pub get
 flutter run
-```
-```
-
-## 📦 Proje Mimarisi
-Proje MVVM (Model-View-ViewModel) mimarisi ile geliştirilmiştir:
-- **Model** → Veri yapıları ve iş mantığı
-- **ViewModel** → İş mantığını yöneten katman
-- **View** → Kullanıcı arayüzü
-
-## 🤝 Katkıda Bulunma
-Eğer projeye katkıda bulunmak istiyorsan, şu adımları takip edebilirsin:
-
-1. Bu repoyu **fork** et
-2. Yeni bir özellik ekle
-3. PR (Pull Request) oluştur
-
-## 📬 İletişim
-Projeyle ilgili herhangi bir sorunun varsa benimle iletişime geçebilirsin:
-
-📧 [emirhancob4n@gmail.com](mailto:emirhan@gmail.com)  
-🐦 [GitHub Profilim](https://github.com/emirhan-coban)
-
----
-```
 
